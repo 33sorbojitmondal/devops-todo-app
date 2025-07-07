@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: backend
+    env: docker
+    plan: free
+    dockerfilePath: backend/Dockerfile
+    envVars:
+      - key: MONGODB_URI
+        sync: false # Set this in the Render dashboard to your managed MongoDB connection string
+
+  - type: web
+    name: frontend
+    env: docker
+    plan: free
+    dockerfilePath: frontend/Dockerfile 
